@@ -14,7 +14,7 @@ export const OrgSidebar = () => {
   const searchParams = useSearchParams();
   const favorites = searchParams.get("favorites");
   return (
-    <div className="hidden md:flex lg:w-[206px] flex-col space-y-6 w-[206px] pl-5 pt-5">
+    <div className="hidden md:flex lg:w-[206px] flex-col space-y-6 pl-5 pt-5">
       <Link href={"/"}>
         <Image src={"/logo.svg"} alt="logo" height={60} width={60} />
         <span className={cn("font-semibold text-2xl", font.className)}>

@@ -14,6 +14,7 @@ export const EmptyBoards = () => {
     mutate({ orgId: organization.id, title: "Undefined" })
       .then((id) => {
         // toast.success("Board created");
+        // TODO: Navigate to new board
       })
       .catch((error) => {
         // toast.error("Failed to create board");

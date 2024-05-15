@@ -11,7 +11,7 @@ export const EmptyBoards = () => {
   const { mutate, pending } = useApiMutation(api.board.create);
   const onClick = () => {
     if (!organization) return;
-    mutate({ orgId: organization.id, title: "Undefined" })
+    mutate({ orgId: organization.id, title: "Untitled" })
       .then((id) => {
         // toast.success("Board created");
         // TODO: Navigate to new board

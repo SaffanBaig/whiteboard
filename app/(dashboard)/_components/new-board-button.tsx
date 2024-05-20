@@ -5,18 +5,20 @@ import { Button } from "@/components/ui/button";
 import { api } from "@/convex/_generated/api";
 import { cn } from "@/lib/utils";
 import { Plus } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 interface NewBoardButtonProps {
   orgId: string;
   disabled?: boolean;
 }
 export const NewBoardButton = ({ orgId, disabled }: NewBoardButtonProps) => {
+  const router = useRouter();
   const { mutate, pending } = useApiMutation(api.board.create);
 
   const onClick = () => {
     mutate({ orgId, title: "Untitled" })
-      .then(() => {
-        // TODO: Navigate to new board
+      .then((id) => {
+        router.push(`/board/${id}`);
       })
       .catch(() => {
         console.log("Failed to create board");

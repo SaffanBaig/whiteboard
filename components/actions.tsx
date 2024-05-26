@@ -35,7 +35,7 @@ export const Actions = ({
 
   const onDelete = () => {
     mutate({ id })
-      .then(() => alert("Board deleted"))
+      .then(() => console.log("Board deleted"))
       .catch((err) => console.log(err));
   };
   const onCopyLink = () => {

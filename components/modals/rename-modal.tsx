@@ -13,7 +13,7 @@ import { DialogTitle } from "@radix-ui/react-dialog";
 import { FormEventHandler, useEffect, useState } from "react";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
-import { useApiMutation } from "@/app/hooks/use-api-mutation";
+import { useApiMutation } from "@/hooks/use-api-mutation";
 import { api } from "@/convex/_generated/api";
 
 export const RenameModal = () => {

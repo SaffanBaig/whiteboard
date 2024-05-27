@@ -1,6 +1,6 @@
 "use client";
 
-import { useApiMutation } from "@/app/hooks/use-api-mutation";
+import { useApiMutation } from "@/hooks/use-api-mutation";
 import { Button } from "@/components/ui/button";
 import { api } from "@/convex/_generated/api";
 import { cn } from "@/lib/utils";

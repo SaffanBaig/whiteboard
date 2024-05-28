@@ -5,6 +5,8 @@ import { ConvexClientProvider } from "@/providers/convex-client-provider";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Toaster } from "@/components/ui/sonner";
 import { ModalProvider } from "@/providers/modal-provider";
+import { Suspense } from "react";
+import { Loading } from "./board/[boardId]/_components/loading";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,12 +24,13 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         {/* <Toaster /> */}
+        <Suspense fallback={<Loading />}>
+          <ConvexClientProvider>
+            <ModalProvider />
 
-        <ConvexClientProvider>
-          <ModalProvider />
-
-          {children}
-        </ConvexClientProvider>
+            {children}
+          </ConvexClientProvider>
+        </Suspense>
       </body>
     </html>
   );
